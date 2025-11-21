@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Pentagon background -->
+  <polygon points="100,10 190,70 160,160 40,160 10,70" fill="#1E88E5" stroke="#0D47A1" stroke-width="3"/>
+  
+  <!-- Text SEKOLAH MENENGAH PERTAMA -->
+  <path d="M 30 40 Q 100 20 170 40" fill="none" stroke="white" stroke-width="1"/>
+  <text x="100" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SEKOLAH MENENGAH PERTAMA</text>
+  
+  <!-- Central elements -->
+  <!-- Globe -->
+  <circle cx="100" cy="90" r="25" fill="#4CAF50"/>
+  <circle cx="100" cy="90" r="23" fill="#81C784"/>
+  <path d="M 85 85 Q 100 80 115 85 Q 100 95 85 85" fill="#2E7D32"/>
+  <path d="M 90 95 Q 105 90 110 100" fill="#2E7D32"/>
+  
+  <!-- Stars -->
+  <polygon points="70,60 72,66 78,66 73,70 75,76 70,72 65,76 67,70 62,66 68,66" fill="white"/>
+  <polygon points="130,60 132,66 138,66 133,70 135,76 130,72 125,76 127,70 122,66 128,66" fill="white"/>
+  <polygon points="60,90 62,96 68,96 63,100 65,106 60,102 55,106 57,100 52,96 58,96" fill="white"/>
+  <polygon points="140,90 142,96 148,96 143,100 145,106 140,102 135,106 137,100 132,96 138,96" fill="white"/>
+  
+  <!-- Flame -->
+  <ellipse cx="100" cy="50" rx="8" ry="15" fill="#FF5722"/>
+  <ellipse cx="100" cy="48" rx="5" ry="10" fill="#FF9800"/>
+  
+  <!-- Book -->
+  <rect x="85" y="115" width="30" height="15" fill="white" stroke="#666" stroke-width="1"/>
+  <rect x="85" y="115" width="15" height="15" fill="#F44336"/>
+  <line x1="100" y1="115" x2="100" y2="130" stroke="#666" stroke-width="1"/>
+  
+  <!-- Wheat left -->
+  <line x1="45" y1="120" x2="45" y2="60" stroke="#FFC107" stroke-width="3"/>
+  <circle cx="43" cy="65" r="2" fill="#FFC107"/>
+  <circle cx="47" cy="70" r="2" fill="#FFC107"/>
+  <circle cx="43" cy="75" r="2" fill="#FFC107"/>
+  <circle cx="47" cy="80" r="2" fill="#FFC107"/>
+  <circle cx="43" cy="85" r="2" fill="#FFC107"/>
+  <circle cx="47" cy="90" r="2" fill="#FFC107"/>
+  
+  <!-- Gear right -->
+  <circle cx="155" cy="90" r="15" fill="none" stroke="#4CAF50" stroke-width="3"/>
+  <circle cx="155" cy="90" r="8" fill="none" stroke="#4CAF50" stroke-width="2"/>
+  <rect x="150" y="75" width="10" height="5" fill="#4CAF50"/>
+  <rect x="150" y="100" width="10" height="5" fill="#4CAF50"/>
+  <rect x="140" y="85" width="5" height="10" fill="#4CAF50"/>
+  <rect x="165" y="85" width="5" height="10" fill="#4CAF50"/>
+  
+  <!-- Bottom banner -->
+  <rect x="30" y="145" width="140" height="20" fill="#D32F2F" rx="3"/>
+  <text x="100" y="158" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">BAKTI NUSANTARA 666</text>
+</svg>

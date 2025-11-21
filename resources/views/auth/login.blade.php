@@ -1,0 +1,102 @@
+@extends('layouts.minimal')
+
+@section('title', 'Login - PPDB Online')
+
+@section('content')
+<div class="min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="max-w-md w-full">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <img src="{{ asset('img/logo-sekolah.svg') }}" alt="Logo SMK BAKTI NUSANTARA 666" class="w-20 h-16 object-contain mx-auto mb-4">
+            <h1 class="text-2xl font-bold text-gray-900">Login</h1>
+            @if(request('redirect') && str_contains(request('redirect'), 'register'))
+                <p class="text-blue-600 mt-2 font-medium">Silakan login terlebih dahulu untuk melanjutkan pendaftaran</p>
+            @else
+                <p class="text-gray-600 mt-2">Masuk ke akun PPDB Online Anda</p>
+            @endif
+        </div>
+
+        <!-- Login Form -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            @if (session('success'))
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-green-700 font-medium">{{ session('success') }}</span>
+                    </div>
+                </div>
+            @endif
+            
+            @if ($errors->any())
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+                        <span class="text-red-700 font-medium">Terjadi kesalahan:</span>
+                    </div>
+                    <ul class="mt-2 text-red-600 text-sm">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('login') }}" class="space-y-4">
+                @csrf
+                @if(request('redirect'))
+                    <input type="hidden" name="redirect" value="{{ request('redirect') }}">
+                @endif
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           value="{{ old('email') }}" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <input type="password" 
+                           id="password" 
+                           name="password" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                </div>
+                
+                <button type="submit" 
+                        class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    Login
+                </button>
+            </form>
+            
+            <!-- Info OTP untuk Siswa -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                <div class="flex items-start">
+                    <i class="fas fa-info-circle text-blue-500 mr-2 mt-0.5"></i>
+                    <div class="text-sm">
+                        <p class="text-blue-700 font-medium mb-1">Informasi untuk Siswa:</p>
+                        <p class="text-blue-600">Setelah login, Anda akan diminta memasukkan kode OTP yang dikirim ke email untuk keamanan tambahan.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-6">
+                <p class="text-sm text-gray-600 mb-2">Belum punya akun?</p>
+                <a href="{{ route('register') }}" 
+                   class="text-blue-600 hover:text-blue-700 transition-colors text-sm font-medium">
+                    Daftar PPDB untuk membuat akun
+                </a>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="{{ route('home') }}" 
+                   class="text-gray-600 hover:text-blue-600 transition-colors text-sm">
+                    ← Kembali ke Beranda
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

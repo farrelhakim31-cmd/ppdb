@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('ppdb_registrations', function (Blueprint $table) {
+            if (!Schema::hasColumn('ppdb_registrations', 'jurusan_id')) {
+                $table->unsignedBigInteger('jurusan_id')->nullable()->after('gelombang_id');
+            }
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('ppdb_registrations', function (Blueprint $table) {
+            if (Schema::hasColumn('ppdb_registrations', 'jurusan_id')) {
+                $table->dropColumn('jurusan_id');
+            }
+        });
+    }
+};

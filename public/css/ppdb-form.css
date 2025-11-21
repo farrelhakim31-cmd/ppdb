@@ -1,0 +1,93 @@
+/* PPDB Form Styles */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-content {
+    transition: all 0.3s ease-in-out;
+}
+
+.step-content.hidden {
+    display: none;
+}
+
+/* Form Input Styles */
+.form-input {
+    transition: all 0.2s ease-in-out;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* File Upload Styles */
+.file-upload-area {
+    transition: all 0.2s ease-in-out;
+}
+
+.file-upload-area:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Progress Indicator */
+.progress-step {
+    transition: all 0.3s ease-in-out;
+}
+
+.progress-step.active {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.progress-step.completed {
+    background-color: #10b981;
+    color: white;
+}
+
+/* Error Styles */
+.error-message {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Loading Spinner */
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .step-content {
+        padding: 1rem;
+    }
+    
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
